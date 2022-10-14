@@ -23,6 +23,7 @@ export default class DateProperty extends PropertyType {
     name = 'Date'
     type = 'date' as PropertyTypeEnum
     isDate = true
+    canFilter = true;
     displayName = (intl: IntlShape) => intl.formatMessage({id: 'PropertyType.Date', defaultMessage: 'Date'})
     calculationOptions = [Options.none, Options.count, Options.countEmpty,
         Options.countNotEmpty, Options.percentEmpty, Options.percentNotEmpty,
