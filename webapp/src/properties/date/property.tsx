@@ -8,7 +8,7 @@ import {IPropertyTemplate} from '../../blocks/board'
 import {Card} from '../../blocks/card'
 import {Utils} from '../../utils'
 
-import {PropertyType, PropertyTypeEnum} from '../types'
+import {FilterValueType, PropertyType, PropertyTypeEnum} from '../types'
 
 import DateComponent, {createDatePropertyFromString} from './date'
 
@@ -22,8 +22,9 @@ export default class DateProperty extends PropertyType {
     Editor = DateComponent
     name = 'Date'
     type = 'date' as PropertyTypeEnum
+    filterValueType = 'date' as FilterValueType
     isDate = true
-    canFilter = true;
+    canFilter = true
     displayName = (intl: IntlShape) => intl.formatMessage({id: 'PropertyType.Date', defaultMessage: 'Date'})
     calculationOptions = [Options.none, Options.count, Options.countEmpty,
         Options.countNotEmpty, Options.percentEmpty, Options.percentNotEmpty,

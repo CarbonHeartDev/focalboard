@@ -160,6 +160,39 @@ const FilterEntry = (props: Props): JSX.Element => {
                                 onClick={(id) => props.conditionClicked(id, filter)}
                             />
                         </>}
+                    {propertyType.filterValueType === 'date' &&
+                        <>
+                            <Menu.Text
+                                id='isWithin'
+                                name={intl.formatMessage({id: 'Filter.is-within', defaultMessage: 'is within'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                            <Menu.Text
+                                id='isNotWithin'
+                                name={intl.formatMessage({id: 'Filter.is-not-within', defaultMessage: 'is not within'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                            <Menu.Text
+                                id='isBefore'
+                                name={intl.formatMessage({id: 'Filter.is-before', defaultMessage: 'is before'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                            <Menu.Text
+                                id='isAfter'
+                                name={intl.formatMessage({id: 'Filter.is-after', defaultMessage: 'is after'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                            <Menu.Text
+                                id='isEmpty'
+                                name={intl.formatMessage({id: 'Filter.is-empty', defaultMessage: 'is empty'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                            <Menu.Text
+                                id='isNotEmpty'
+                                name={intl.formatMessage({id: 'Filter.is-not-empty', defaultMessage: 'is not empty'})}
+                                onClick={(id) => props.conditionClicked(id, filter)}
+                            />
+                        </>}
                 </Menu>
             </MenuWrapper>
             <FilterValue
