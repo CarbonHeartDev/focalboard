@@ -3,6 +3,9 @@
 import React, {useState} from 'react'
 import {useIntl} from 'react-intl'
 
+import DayPicker from 'react-day-picker'
+import MomentLocaleUtils from 'react-day-picker/moment'
+
 import {IPropertyTemplate} from '../../blocks/board'
 import {FilterClause} from '../../blocks/filterClause'
 import {createFilterGroup} from '../../blocks/filterGroup'
@@ -58,6 +61,23 @@ const filterValue = (props: Props): JSX.Element|null => {
                     newFilter.values = [value]
                     mutator.changeViewFilter(view.boardId, view.id, view.fields.filter, filterGroup)
                 }}
+            />
+        )
+    }
+
+    if (propertyType.filterValueType === 'date') {
+        return (
+            <DayPicker
+                // eslint-disable-next-line no-console
+                onDayClick={(day) => console.log(day)}
+                initialMonth={new Date()}
+                showOutsideDays={false}
+                locale={'en-gb'}
+                localeUtils={MomentLocaleUtils}
+                todayButton={intl.formatMessage({id: 'DateRange.today', defaultMessage: 'Today'})}
+                // eslint-disable-next-line no-console
+                onTodayButtonClick={(day) => console.log(day)}
+                month={new Date()}
             />
         )
     }
